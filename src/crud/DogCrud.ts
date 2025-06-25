@@ -1,0 +1,21 @@
+import axios from "axios"
+
+
+const BASE_URL = 'https://dog.ceo/api/breeds/image/random'
+
+export const getRandomDog= async () : Promise<string> => {
+
+    const response = await axios.get(BASE_URL)
+    if (response.data.status !== "success" )
+        return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGh5WFH8TOIfRKxUrIgJZoDCs1yvQ4hIcppw&s'
+    else{
+        return response.data.message
+    }
+}
+
+
+
+//las funciones asincronas tienen que esperar una respuesta, por eso siempre va Promise cuando tipamos la función,
+//tipamos la promesa = Promise<acá_va_lo_que_devuelve>, lo que va a devolver, que va a ser lo que tipamos en la interface,
+//  o puede ser otra cosa. Adentro cuando hacemos el fetch, ponemos un await porque es una promesa que esperamos que se resuelva
+//

@@ -1,0 +1,164 @@
+🎯 Objetivo del proyecto:
+Un buscador de imagenes de perros con React + TypeScript que: 
+    Tiene una barra de búsqueda con un selector de razas de perros.
+
+    Consulta la API de dog: https://dog.ceo/api/breeds/image/random
+
+
+
+📌 Herramientas que vas a usar:
+React (con Functional Components - FC)
+    -TypeScript
+    -Axios (para hacer las requests)
+    -useState y useEffect (hooks de React)
+
+No store global (Zustand) por ahora, se puede agregar después
+
+
+✅ Pasos del proyecto
+    -Configurar Axios para trabajar con la API de OMDb.
+
+    -Crear componentes funcionales (FC): Barra de búsqueda, lista de películas, card individual.
+
+    -Agregar estado local con useState para controlar la búsqueda y los resultados.
+
+    -Manejar eventos con onChange y onClick para capturar el input y hacer la búsqueda.
+
+    -Hacer la petición HTTP a la API con Axios cuando el usuario busque algo.
+
+    -Renderizar los datos recibidos de la API en un componente.
+
+    -Manejar errores, loading y estados vacíos (por ejemplo, cuando no hay resultados).
+
+    -Agregar paginación básica si querés mostrar de a 10.
+
+    -(Opcional) Estilos con CSS o Tailwind.
+
+
+---------------------------------------------------------------------------------------
+-----------------------🔍 ¿Qué es cada cosa?-------------------------------------------
+---------------------------------------------------------------------------------------
+🎯 Componentes funcionales (FC)
+✅ 1. Componentes funcionales (Functional Components – FC)
+Un componente funcional es simplemente una función de JavaScript o TypeScript que devuelve JSX (estructura HTML con lógica de React).
+
+    💡 ¿Por qué usamos componentes funcionales?
+
+    Son simples de entender.
+
+    Se integran perfectamente con los hooks (useState, useEffect, etc.).
+
+    Son reutilizables (los podés usar varias veces en otros lugares).
+
+    Ejemplo lógico (sin código):
+    Imaginá que creás una caja con un input y un botón, y querés poder reutilizar esa "caja" en otro lugar. Eso es un componente.
+
+    Más info oficial: https://react.dev/learn/your-first-component
+
+🧠 Estado local con useState
+✅ 2. useState: Guardar estados (como el texto que escribe el usuario)
+React no "recuerda" lo que pasa en el navegador por sí solo. Para eso usamos useState, que guarda valores temporales como:
+
+    Lo que el usuario escribe en un input.
+
+    Una lista de películas que vino de una API.
+
+    Si el componente está cargando o no.
+
+    ts
+    Copiar
+    Editar
+    const [algo, setAlgo] = useState(valorInicial);
+    Es como decir:
+
+    algo: el valor actual
+
+    setAlgo: cómo cambiarlo
+
+Doc oficial: https://react.dev/reference/react/useState
+
+🎣 onChange y onClick
+✅ 3. onChange y onClick (eventos)
+Eventos son acciones del usuario (clicks, escritura, etc.)
+    Se escriben en camelCase y se agregan como atributos a los elementos.
+
+    onChange: cuando el usuario escribe en el input.
+
+    onClick: cuando toca un botón.
+
+    🎯 Ejemplo mental:
+
+    Quiero que cada vez que el usuario escriba, se actualice un estado.
+
+    Quiero que cuando haga clic, se dispare una función.
+
+📡 Axios y la API
+✅ 4. Axios (o fetch)
+axios es una librería para hacer peticiones HTTP. Ya lo tenés, así que esto lo dejamos para más adelante, pero te dejo el resumen:
+
+    axios.get(URL).then((res) => console.log(res.data));
+
+ Podes leer documentación de la api en: https://www.omdbapi.com/
+
+
+ 
+🎬 Parte 2: Primer mini objetivo → Crear un componente funcional con input y botón
+    🧩 ¿Qué vamos a lograr?
+    Queremos que:
+
+    Tengas un componente que muestre un input y un botón.
+
+    El input esté conectado con un useState → o sea, guarde lo que el usuario escribe.
+
+    Al hacer clic en el botón, mostrar ese texto en consola.
+
+
+
+📄 ¿Cómo se ve un componente funcional?
+Es una función que devuelve JSX.
+
+Debe comenzar con mayúscula (por convención).
+
+La exportás para usarla en otros archivos (por ejemplo en App.tsx).
+
+📦 src/components/SearchBar.tsx
+
+tsx
+Copiar
+Editar
+import React from 'react';
+
+const SearchBar: React.FC = () => {
+  return (
+    <div>
+      <input type="text" />
+      <button>Buscar</button>
+    </div>
+  );
+};
+
+export default SearchBar;
+Acá todavía no hay funcionalidad. Esto es solo estructura.
+
+
+📦 Tipado en TypeScript
+La respuesta de la API va a tener una forma, por ejemplo:
+
+json
+Copiar
+Editar
+{
+  "Search": [
+    {
+      "Title": "Batman Begins",
+      "Year": "2005",
+      "imdbID": "tt0372784",
+      "Type": "movie",
+      "Poster": "https://..."
+    },
+    ...
+  ],
+  "totalResults": "405",
+  "Response": "True"
+}
+Podés crear una interface en TypeScript que describa eso.
