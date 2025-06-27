@@ -1,0 +1,20 @@
+
+
+Resolvedora: es una función que me resuelve la promesa de la llamada del método.
+    -Siempre se usa en los fetchs porque queremos resolver esa solicitud al servidor.
+    -Como vamos a resolver una promesa, la función debe ser asincrona y debe tener adentro un await ya que debe esperar
+     esa respuesta, esa respuesta que puede fallar.  
+     La estructura es:
+        const nombre_función = async () => {
+            const response = await nombre_metodo()
+            ---Hay que guardar la respuesta  en un estado para después usarla. Sino no sirve de nada. 
+        }
+
+    -Después entra en juego el useEffect():
+        -lo usamos para montar componentes por primera vez, sin la necesidad de que se accione manualmente con un botón
+        -La estructura del useEffect es:
+            useEffect(()=>{
+                -hacer algo como llamar a la función que me hace el fetch
+            },
+            [])
+

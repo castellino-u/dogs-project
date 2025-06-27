@@ -162,3 +162,5 @@ Editar
   "Response": "True"
 }
 Podés crear una interface en TypeScript que describa eso.
+
+
