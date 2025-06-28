@@ -18,3 +18,67 @@ Resolvedora: es una función que me resuelve la promesa de la llamada del métod
             },
             [])
 
+
+
+Estilos: 
+    Estilos de cartas: Parametros generales para una carta para que tengan un estilo rapido y sencillo:
+    -que sea mas alta que ancha
+    -bordes redondeados
+    -sombras
+    -hover
+    -gap: espacio entre objetos
+    -margen: m-auto : esto alinea los elementos en el centro. Crea un espacio alrededor del elemento
+    -
+    -flex items-center justify-center: centra vertical y horizontal
+    -gap: espaciado entre los elementos. Solo anda cuando tenes displey flex
+    -podes espaciar los elementos y manipular el css cuando los pones en la MainScreen
+    -
+
+
+Loading: cosas a tener en cuenta
+    -Es un elemento que gire, puede ser una imagen o icono. 
+    -La propiedad apropiada para eso es un: animate-spin
+    -IMPORTANTE: Eso ponermelo en un estado que se llame loading, y hay que evaluarlo para ver cuando 
+
+🔠 Tipografía
+Clase	Descripción
+text-sm, text-lg  : 	Tamaño del texto
+font-bold, font-light   :	Peso del texto
+text-gray-800	:   Color del texto (oscuro)
+text-center, text-left	:   Alineación del texto
+leading-relaxed	    :   Espaciado entre líneas
+
+🎨 Colores
+Clase	Uso
+bg-white, bg-gray-100   :	Fondo claro
+bg-blue-500, bg-red-500     :	Fondo de botón o destaque
+text-gray-600, text-white   :	Texto
+
+✅ Tip: Usá [gray-100 a gray-900] para diferentes tonos neutros
+
+📦 Espaciado
+Clase	Descripción
+p-4, p-6    :	Padding interno
+m-4, mb-4, mt-2    : 	Margen (espaciado externo)
+gap-4   :   Espaciado entre hijos en grid/flex
+
+🔳 Bordes y esquinas
+Clase	Descripción
+rounded, rounded-lg, rounded-2xl	Bordes redondeados
+border, border-gray-300	Bordes exteriores
+
+📐 Tamaños
+Clase	Descripción
+w-full, max-w-sm	Ancho completo / máximo pequeño
+h-48, h-auto	Alto fijo o automático
+-si pones w-[] => dentro de los parentesis podes poner un valor propio, no olvidarse de poner la medida %,px, vh y vw
+
+
+🔄 Efectos y transiciones
+Clase	Descripción
+hover:bg-blue-600	Color al pasar el mouse
+transition, duration-300	Transiciones suaves
+
+Botones: 
+    -cursor:pointer para que te ponga la manito de que podes clickear
+    -hover 

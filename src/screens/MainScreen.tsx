@@ -8,8 +8,10 @@ export const MainScreen = () => {
 
     <div>
         <Header></Header>
+        <div className="flex flex-col gap-4.5 mt-8">
         <RandomDog></RandomDog>
         <DogSelection></DogSelection>
+        </div>
     </div>
     );
 };
