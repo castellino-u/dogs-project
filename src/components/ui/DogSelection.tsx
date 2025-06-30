@@ -8,7 +8,7 @@ export const DogSelection = () => {
     //Acá traemos todo y armamos el array de vuelta para poder guardar todo en un estado y volver a usarlo. 
     const [arrayBreeds, setArrayBreeds] = useState<string[]>([]) //hay que tipar el array por typescript, le decimos que el array va a ser un array de strings
 
-    const [selectBreed, setSelectBreed] =useState('')
+    const [selectBreed, setSelectBreed] =useState('') //para el filtrado es importante
 
     const [dogImg, setDogImg] = useState ('')
 
@@ -23,8 +23,8 @@ export const DogSelection = () => {
         console.log(response)
 
     }
-    //funcion que maneja el evento
-    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>)=>{
+    //funcion que maneja el evento --- importante para el filtrado
+    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>)=>{   
         setSelectBreed(e.target.value)
     }
     
